@@ -162,7 +162,21 @@ class Administration_model extends CI_Model {
       }
 
 
-
+    //nombre d'agriculteur 
+    public function sql_nombreagriculteur()
+    {
+        
+        $q = $this->db->get('agriculteur');
+        return $q->num_rows();
+    }
+    
+    //nombre de plantation
+   public function sql_nombreplantation()
+    {
+        
+        $q = $this->db->get('plantation');
+        return $q->num_rows();
+    }
 
 
    }

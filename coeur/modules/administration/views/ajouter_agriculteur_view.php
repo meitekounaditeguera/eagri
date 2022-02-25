@@ -47,6 +47,7 @@
 
                         <form action="<?php  echo base_url()?>administration/agriculteurs/ajouter_agriculteur" method="post">
                           
+                          
                           <div class="form-group">
                             <label for="exampleFormControlInput1">NOM</label>
                             <input type="text" class="form-control" id="exampleFormControlInput1" name="nom">

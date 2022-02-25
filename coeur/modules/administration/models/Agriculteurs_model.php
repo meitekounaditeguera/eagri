@@ -33,6 +33,16 @@ class Agriculteurs_model extends CI_Model {
 
       }
 
+      public function selects_agriculteur($id_agri)
+      {
+
+        $this->db->where('idagri',$id_agri);
+        $query = $this->db->get('accueil');
+        return $query->first_row();
+
+      }
+
+
 
 
       public function get_agriculteur($id_agri)
