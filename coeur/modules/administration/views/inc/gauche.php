@@ -10,7 +10,7 @@
                             </a>
                                 <a class="nav-link" href="<?php echo base_url()?>administration/agriculteurs/agriculteur">
                                   <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                  Liste des agriculteur</a>
+                                  Liste des agriculteurs</a>
 
 
                                 <a class="nav-link" href="<?php echo base_url()?>administration/plantations/plantation">

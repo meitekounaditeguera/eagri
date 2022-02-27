@@ -1,4 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+
+         <img src="<?php echo base_url(); ?>uploads/images/2paibelier.jpg" alt=""  width=50px;>
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">E-AGRI ADMIN</a>
             <!-- Sidebar Toggle-->
