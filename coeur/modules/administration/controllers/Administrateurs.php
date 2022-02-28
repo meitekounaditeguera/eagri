@@ -78,17 +78,18 @@ class Administrateurs extends CI_Controller {
 
 
 
-    public function modifier_administrateur($id_admin)
+    public function modifier_administrateur()
     {
 
 
         $this->form_validation->set_rules('nom', 'Nom administrateur', 'trim|required');
         $this->form_validation->set_rules('prenom', 'Prenom administrateur', 'trim|required');
         $this->form_validation->set_rules('email', "Email de l'administrateur dans la base de données", 'trim|required|valid_email|is_unique[administrateur.email]');
-        $this->form_validation->set_rules('mot_de_passe', 'mot de passe  administrateur', 'trim|required');
-        $this->form_validation->set_rules('numero_telephone', "Telephone de l'administrateur", 'trim|required|max_length[10]');
+        //$this->form_validation->set_rules('mot_de_passe', 'mot de passe administrateur', 'trim|required');
+        //$this->form_validation->set_rules('numero_telephone', "Telephone de l'administrateur", 'trim|required|max_length[10]');
         $this->form_validation->set_rules('privilege', 'privilege administrateur', 'trim|required');
-        $this->form_validation->set_rules('idadmin', 'ID', 'trim|required');
+
+  
 
         if ($this->form_validation->run()) {
 
@@ -102,7 +103,8 @@ class Administrateurs extends CI_Controller {
                       
                   );
 
-                  $iDadmin=$this->security->xss_clean($this->input->post('idadmin'));
+                  
+                  $idadmin=$this->uri->segment(4);
                   $this->administrateurs_model->update_administrateur($data,$idadmin);
                   $this->session->set_flashdata('mod', '1');
                   redirect_back();

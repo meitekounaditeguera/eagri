@@ -180,14 +180,18 @@
 
                                 <div class="d-flex">
 
-                                 <a title="Modifier" href="<?php echo base_url()?>administration/agriculteurs/agriculteur_recup/<?php echo $ligne->idplant?>" class="btn btn-primary shadow btn-xs sharp mr-1"> <i class="bi bi-pencil-square"></i> </a><br>&nbsp; 
+                                 <a title="Modifier" href="<?php echo base_url()?>administration/plantations/plantation_recup/<?php echo $ligne->idplant?>" class="btn btn-primary shadow btn-xs sharp mr-1"> <i class="bi bi-pencil-square"></i> </a><br>&nbsp; 
 
-                                <button  type="button" title="Supprimer"
+
+                                 <button  type="button" title="Supprimer"
                                  onClick="javascript:if(window.confirm('Voulez-vous supprimer ?')){location.href='<?php echo site_url('administration/plantations/plantation_supp/'.$ligne->idplant) ; ?>'; return true;} else {return false;}"class="btn btn-secondary shadow btn-xs sharp">
-                                <i class="bi bi-trash-fill"> </i>  </a> 
+                                <i class="bi bi-trash-fill"> </i> </a>
 
                                 </div>
-                                </td>
+                                </td> 
+
+
+
 
 
 

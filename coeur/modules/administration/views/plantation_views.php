@@ -46,7 +46,6 @@
                                             <th>LATITUDE</th>
                                             <th>LONGITUDE</th>
                                             <th>TYPE CULTURE</th>
-                                            <th>TACHES</th>
 
                                         </tr>
                                     </thead>
@@ -59,8 +58,7 @@
                                             <th>LATITUDE</th>
                                             <th>LONGITUDE</th>
                                             <th>TYPE CULTURE</th>
-                                            <th>TACHES</th>
-
+                                           
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -99,9 +97,9 @@
 
                         </td>
 
-                        <td>
+                       <!-- <td>
                            
-                        <td align="center">
+                       <td align="center">
 
                                 <div class="d-flex">
 
@@ -112,7 +110,7 @@
                               <i class="bi bi-trash-fill"> </i></a>
 
                                 </div>
-                                </td>
+                                </td>-->
 
 
 

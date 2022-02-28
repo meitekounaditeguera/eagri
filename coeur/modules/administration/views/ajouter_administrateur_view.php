@@ -73,21 +73,14 @@
 
                               
                               <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="1" id="1" name="privilege" checked>
-                              <label class="form-check-label" for="1"> Administrateur</label>
+                              <input class="form-check-input" type="radio" value="1" id="1" name="privilege" checked>
+                              <label class="form-check-label" for="1"> Administrateur général</label>
                               </div>
 
                               <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="2" id="2" name="privilege">
-                              <label class="form-check-label" for="2">Gestionnaire des agriculteurs et plantations</label>
-
+                              <input class="form-check-input" type="radio" value="2" id="2" name="privilege">
+                              <label class="form-check-label" for="2">utilisateur</label>
                               </div>
-                              <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="3" id="3" name="privilege">
-                              <label class="form-check-label" for="3">  Gestionnaire des utilisateurs</label>
-                              </div>
-
-                              
 
                             <input class="btn btn-primary" type="submit" value="ENREGISTRER">
                             <input class="btn btn-primary" type="reset" value="ANNULER">

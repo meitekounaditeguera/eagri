@@ -57,38 +57,43 @@
                             <input type="text" class="form-control" id="exampleFormControlInput1" name="prenom" value="<?php echo $get->prenom;  ?>">
                           </div>
 
-                           <div class="form-group">
-                            <label for="exampleFormControlInput1">EMAIL</PRE></label>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">EMAIL</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="<?php echo $get->email;  ?>">
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">MOT DE PASSE</PRE></label>
-                            <input type="pwd" class="form-control" id="exampleFormControlInput1" name="mot_de_passe">
+                            <label for="exampleFormControlInput1">MOT DE PASSE</label>
+                            <input type="pwd" class="form-control" id="exampleFormControlInput1" name="mot_de_passe" value="<?php echo $get->mot_de_passe;  ?>">
                           </div>
-                          
+
                            <div class="form-group">
                             <label for="exampleFormControlInput1">NUMERO TELEPHONE</label>
                             <input type="number" class="form-control" id="exampleFormControlInput1" name="numero_telephone" value="<?php echo $get->numero_telephone;  ?>">
                           </div>
-
-                          
-
+ 
                               <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="privilege"  value="1" id="1"  <?php if($get->privilege =='1'){ echo "checked=''";}?>>
-                              <label class="form-check-label" for="1"> Administrateur</label>
+                                <input class="form-check-input" type="radio" name="privilege" id="1" value="1" <?php if($get->privilege =='1'){ echo "checked=''";}?> >
+                                <label class="form-check-label" for="1">
+                                 Administrateur général
+                                </label>
                               </div>
 
-                              <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="privilege"  value="2" id="2" <?php if($get->privilege =='2'){ echo "checked=''";}?>>
-                              <label class="form-check-label" for="2">Gestionnaire des agriculteurs et plantations</label>
+                             <div class="form-check">
+                                <input class="form-check-input" type="radio" name="privilege" id="2" value="2" <?php if($get->privilege =='2'){ echo "checked=''";}?>>
+                                <label class="form-check-label" for="2">
+                                 Utilisateur
+                                </label>
 
                               </div>
-                              <div class="form-check">
-                              <input class="form-check-input" type="checkbox"  value="3" id="3" name="privilege" <?php if($get->privilege =='3'){ echo "checked=''";}?>>
-                              <label class="form-check-label" for="3">  Gestionnaire des utilisateurs</label>
-                              </div>
 
+
+                              
+
+                 <!-- $idadmin=$this->uri->segment(4);
+                  $this->administrateurs_model->update_administrateur($data,$idadmin);
+                  $this->session->set_flashdata('mod', '1');
+                  redirect_back();-->
 
 
                               

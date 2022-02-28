@@ -43,13 +43,12 @@ class Administrateurs_model extends CI_Model {
       }
 
 
-    public function update_administrateur($data, $idadmin)
+ public function update_administrateur($data, $idadmin)
     {
-        $this->db->where('idadmin', $idadmin);
+        $this->db->where('idadmin',$idadmin);
         $this->db->update('administrateur', $data);
         return true;
     }
-
 
 
 

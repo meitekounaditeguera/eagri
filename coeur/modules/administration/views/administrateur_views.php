@@ -83,21 +83,22 @@
                         <td>
                             <?php
 
-                                      if($ligne->privilege =='1')
-                                    {
-                                        echo "Administrateur general";
-                                    }
+                      if($ligne->privilege =='1')
+                    {
+                        echo " Administrateur général";
+                    }
 
-                                      elseif($ligne->privilege =='2')
-                                    {
-                                        echo "Gestionnaire des agriculteurs et plantations";
-                                    }
-                                     else
-                                    {
-                                        echo "Gestionnaire des utilisateurs";
-                                    }
+                      elseif ($ligne->privilege =='2') 
+                    {
+                        echo "Utilisateur";
+                    }
+                     else
+                    {
+                        echo "n'affiche rien";
+                    }
 
-                            ?>
+                    ?>
+
 
                         </td>
 
@@ -106,7 +107,9 @@
 
                                 <div class="d-flex">
 
-                                 <a  title="Modifier" href="<?php echo base_url()?>administration/administrateurs/administrateur_recup/<?php echo $ligne->idadmin?>" class="btn btn-primary shadow btn-xs sharp mr-1"> <i class="bi bi-pencil-square"></i></a> &nbsp; 
+                                 <a title="Modifier" href="<?php echo base_url()?>administration/administrateurs/administrateur_recup/<?php echo $ligne->idadmin?>" class="btn btn-primary shadow btn-xs sharp mr-1"> <i class="bi bi-pencil-square"> </i> </a>&nbsp;  
+
+
 
                                 <button  type="button" title="Supprimer" 
                                  onClick="javascript:if(window.confirm('Voulez-vous supprimer ?')){location.href='<?php echo site_url('administration/administrateurs/administrateur_supp/'.$ligne->idadmin) ; ?>'; return true;} else {return false;}"class="btn btn-secondary shadow btn-xs sharp">

@@ -9,7 +9,7 @@
                                 Tableau de bord
                             </a>
                                 <a class="nav-link" href="<?php echo base_url()?>administration/agriculteurs/agriculteur">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                  <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                   Liste des agriculteurs</a>
 
 
@@ -19,16 +19,16 @@
                             
 
                                 <a class="nav-link" href="<?php echo base_url()?>administration/administrateurs/administrateur">
-                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                 <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
                                  Administration</a>           
                                
 
 
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                   <!-- <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
-                    </div>
+                    </div>-->
                 </nav>
             </div>
