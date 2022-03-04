@@ -26,7 +26,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Administration</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Enregistrement des administrateurs</li>
+                            <li class="breadcrumb-item active">Enregistrement des departements</li>
                         </ol>
 
                                    <?php
@@ -36,14 +36,14 @@
                                     if($ajout == '1'){
 
                                        echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                      <strong>Administrateur enregistré avec succès</strong>
+                                      <strong>departement enregistré avec succès</strong>
                                        </div>';
                                     }
                                 ?>
 
 
 
-                        <form action="<?php  echo base_url()?>administration/administrateurs/ajouter_administrateur" method="post">
+                        <form action="<?php  echo base_url()?>administration/departements/ajouter_departement" method="post">
                           
                           <div class="form-group">
                             <label for="exampleFormControlInput1">NOM</label>
@@ -51,36 +51,12 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">PRENOM</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" name="prenom">
+                            <label for="exampleFormControlInput1">SUPERFICIE</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="superficie">
                           </div>
 
-                           <div class="form-group">
-                            <label for="exampleFormControlInput1">EMAIL</PRE></label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleFormControlInput1">MOT DE PASSE</PRE></label>
-                            <input type="pwd" class="form-control" id="exampleFormControlInput1" name="mot_de_passe">
-                          </div>
-
-                           <div class="form-group">
-                            <label for="exampleFormControlInput1">NUMERO TELEPHONE</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1" name="numero_telephone">
-                          </div>
-
-
-                              
-                              <div class="form-check">
-                              <input class="form-check-input" type="radio" value="1" id="1" name="privilege" checked>
-                              <label class="form-check-label" for="1"> Administrateur général</label>
-                              </div>
-
-                              <div class="form-check">
-                              <input class="form-check-input" type="radio" value="2" id="2" name="privilege">
-                              <label class="form-check-label" for="2">utilisateur</label>
-                              </div>
+                             
+                            
 
                             <input class="btn btn-primary" type="submit" value="ENREGISTRER">
                             <input class="btn btn-primary" type="reset" value="ANNULER">

@@ -16,7 +16,10 @@
                                 <a class="nav-link" href="<?php echo base_url()?>administration/plantations/plantation">
                                  <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                  Liste des plantations</a>
-                            
+
+                                    <a class="nav-link" href="<?php echo base_url()?>administration/departements/departement">
+                                  <div class="sb-nav-link-icon"><i class="fas fa-globe"></i></div>
+                                  Liste des departements ici</a>
 
                                 <a class="nav-link" href="<?php echo base_url()?>administration/administrateurs/administrateur">
                                  <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>

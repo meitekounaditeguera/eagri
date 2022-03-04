@@ -9,7 +9,27 @@ class Agriculteurs_model extends CI_Model {
       public function liste_agriculteur()
       {
 
-        $query = $this->db->get('agriculteur');
+        $this->db->select('*');
+        $this->db->from('agriculteur');
+        $this->db->join('departement','departement.iddep = agriculteur.iddep ');
+
+        $query = $this->db->get();
+        return $query->result();
+
+      }
+
+       public function liste_dep()
+      {
+
+        $query = $this->db->get('departement');
+        return $query->result();
+
+      }
+
+         public function modifie_dep()
+      {
+
+        $query = $this->db->get('departement');
         return $query->result();
 
       }
@@ -57,9 +77,11 @@ class Agriculteurs_model extends CI_Model {
 
       public function get_liste_plantation_agriculteur($id_agri)
       {
-
+        $this->db->select('*');
+        $this->db->from('plantation');
+        $this->db->join('departement','departement.iddep = plantation.iddep ');
         $this->db->where('idagri',$id_agri);
-        $query = $this->db->get('plantation');
+        $query = $this->db->get();
         return $query->result();
 
       }

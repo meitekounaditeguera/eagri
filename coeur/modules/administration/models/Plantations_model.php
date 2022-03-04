@@ -18,18 +18,37 @@ class Plantations_model extends CI_Model {
 
       public function liste_plantation()
       {
+        $this->db->select('*');
+        $this->db->from('plantation');
+        $this->db->join('departement','departement.iddep = plantation.iddep ');
+        $query = $this->db->get();
+        return $query->result();
 
-        $query = $this->db->get('plantation');
+      }
+
+       public function liste_dep()
+      {
+
+        $query = $this->db->get('departement');
+        return $query->result();
+
+      }
+
+          public function modifie_dep()
+      {
+
+        $query = $this->db->get('departement');
         return $query->result();
 
       }
 
 
+
       public function ajout_plantation($donne)
       {
-
+      
         $this->db->insert('plantation', $donne);
-
+       
       }
 
 

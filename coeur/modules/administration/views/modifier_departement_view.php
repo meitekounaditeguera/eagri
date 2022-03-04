@@ -36,7 +36,7 @@
 
                                     if($mod == '1'){
                                        echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                      <strong>administrateur modifié avec succès</strong>
+                                      <strong>departement modifié avec succès</strong>
                                        </div>';
                                     }
                                 ?>
@@ -45,53 +45,24 @@
                      
 
 
-                        <form action="<?php  echo base_url()?>administration/administrateurs/modifier_administrateur/<?php echo $get->idadmin;  ?>" method="post">
+                        <form action="<?php  echo base_url()?>administration/departements/modifier_departement/<?php echo $get->iddep;  ?>" method="post">
                           
                           <div class="form-group">
                             <label for="exampleFormControlInput1">NOM</label>
-                          <input type="text" class="form-control" id="exampleFormControlInput1" name="nom" value="<?php echo  $get->nom;  ?>">
+                          <input type="text" class="form-control" id="exampleFormControlInput1" name="nom" value="<?php echo  $get->nomdep;;  ?>">
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">PRENOM</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" name="prenom" value="<?php echo $get->prenom;  ?>">
+                            <label for="exampleFormControlInput1">SUPERFICIE</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="superficie" value="<?php echo $get->superficie;  ?>">
                           </div>
 
-                          <div class="form-group">
-                            <label for="exampleFormControlInput1">EMAIL</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="<?php echo $get->email;  ?>">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleFormControlInput1">MOT DE PASSE</label>
-                            <input type="pwd" class="form-control" id="exampleFormControlInput1" name="mot_de_passe" value="<?php echo $get->mot_de_passe;  ?>">
-                          </div>
-
-                           <div class="form-group">
-                            <label for="exampleFormControlInput1">NUMERO TELEPHONE</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1" name="numero_telephone" value="<?php echo $get->numero_telephone;  ?>">
-                          </div>
- 
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="privilege" id="1" value="1" <?php if($get->privilege =='1'){ echo "checked=''";}?> >
-                                <label class="form-check-label" for="1">
-                                 Administrateur général
-                                </label>
-                              </div>
-
-                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="privilege" id="2" value="2" <?php if($get->privilege =='2'){ echo "checked=''";}?>>
-                                <label class="form-check-label" for="2">
-                                 Utilisateur
-                                </label>
-
-                              </div>
 
 
                               
 
-                 <!-- $idadmin=$this->uri->segment(4);
-                  $this->administrateurs_model->update_administrateur($data,$idadmin);
+                 <!-- $idddep=$this->uri->segment(4);
+                  $this->ddepistrateurs_model->update_ddepistrateur($data,$idddep);
                   $this->session->set_flashdata('mod', '1');
                   redirect_back();-->
 
@@ -99,7 +70,7 @@
                               
                               
 
-                             <input type="hidden" name="idadmin" value="<?php echo $get->idadmin;?>">
+                             <input type="hidden" name="iddep" value="<?php echo $get->iddep;?>">
 
                              <input class="btn btn-primary" type="submit" value="MODIFIER">
                              <input class="btn btn-primary" type="reset" value="ANNULER">

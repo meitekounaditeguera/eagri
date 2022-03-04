@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>Plateforme E-agri</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="<?php echo base_url();?>assets/administration/css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -95,13 +95,27 @@
                                </select>
                           </div>
 
-
-
-
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">BIOGRAPHIE</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="biographie" rows="3"><?php echo $get->biographie;?></textarea>
                           </div>
+
+                           <div class="form-group">
+                          <label for="exampleFormControlSelect1"><DATA>DEPARTEMENT</DATA></label>
+                            <select class="form-control" id="departement" name="departement">
+                             
+                               <?php
+
+                               foreach($dep as $ligne) { ?>
+
+                               
+                                <option value="<?php echo $ligne->iddep;?>" <?php if($get->iddep == $ligne->iddep){ echo "selected=''";}?>> <?php echo $ligne->nomdep;?></option>
+                          
+                                <?php } ?>
+                                 
+                                 
+                               
+                             </select><br>
                      
 
 

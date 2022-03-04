@@ -25,7 +25,6 @@ class Agriculteurs extends CI_Controller {
     }
 
 
-
     public function ajouter_agriculteur()
     {
 
@@ -40,6 +39,7 @@ class Agriculteurs extends CI_Controller {
         $this->form_validation->set_rules('boite_postale','Boite postale', 'trim|required');
         $this->form_validation->set_rules('nombre_annee', "Nombre d'annee", 'trim|required');
         $this->form_validation->set_rules('biographie', 'La biographie', 'trim|required');
+        $this->form_validation->set_rules('departement', 'ID', 'trim|required');
 
 
         if ($this->form_validation->run()) {
@@ -55,6 +55,7 @@ class Agriculteurs extends CI_Controller {
                       'boite_postale' => $this->security->xss_clean($this->input->post('boite_postale')),
                       'nombre_annee' => $this->security->xss_clean($this->input->post('nombre_annee')),
                       'biographie' => $this->security->xss_clean($this->input->post('biographie')),
+                      'iddep' => $this->security->xss_clean($this->input->post('departement'))
                   );
 
                   $this->agriculteurs_model->ajout_agriculteur($data);
@@ -70,7 +71,8 @@ class Agriculteurs extends CI_Controller {
 
         }else{
 
-           $this->load->view('ajouter_agriculteur_view');
+           $donne['dep']=$this->agriculteurs_model->liste_dep();
+           $this->load->view('ajouter_agriculteur_view',$donne);
 
         }
 
@@ -104,6 +106,7 @@ class Agriculteurs extends CI_Controller {
         $this->form_validation->set_rules('nombre_annee', "Nombre d'annee", 'trim|required');
         $this->form_validation->set_rules('biographie', 'La biographie', 'trim|required');
         $this->form_validation->set_rules('idagri', 'ID', 'trim|required');
+        $this->form_validation->set_rules('departement', 'ID', 'trim|required');
 
 
         if ($this->form_validation->run()) {
@@ -119,6 +122,7 @@ class Agriculteurs extends CI_Controller {
                       'boite_postale' => $this->security->xss_clean($this->input->post('boite_postale')),
                       'nombre_annee' => $this->security->xss_clean($this->input->post('nombre_annee')),
                       'biographie' => $this->security->xss_clean($this->input->post('biographie')),
+                      'iddep' => $this->security->xss_clean($this->input->post('departement'))
                   );
 
                  // $idagri=$this->security->xss_clean($this->input->post('idagri'));
@@ -128,8 +132,6 @@ class Agriculteurs extends CI_Controller {
 
 
         }else{
-
-
 
 
            redirect_back();
@@ -154,7 +156,7 @@ class Agriculteurs extends CI_Controller {
         $this->form_validation->set_rules('nombre_annee', "Nombre d'annee", 'trim|required');
         $this->form_validation->set_rules('biographie', 'La biographie', 'trim|required');
         $this->form_validation->set_rules('idagri', 'ID', 'trim|required');
-
+        $this->form_validation->set_rules('departement', 'ID', 'trim|required');
 
         if ($this->form_validation->run()) {
 
@@ -169,6 +171,7 @@ class Agriculteurs extends CI_Controller {
                       'boite_postale' => $this->security->xss_clean($this->input->post('boite_postale')),
                       'nombre_annee' => $this->security->xss_clean($this->input->post('nombre_annee')),
                       'biographie' => $this->security->xss_clean($this->input->post('biographie')),
+                      'iddep' => $this->security->xss_clean($this->input->post('departement'))
                   );
 
                  // $idagri=$this->security->xss_clean($this->input->post('idagri'));
@@ -196,6 +199,7 @@ class Agriculteurs extends CI_Controller {
       {
           if ($id) {
               $data['get'] = $this->agriculteurs_model->get_agriculteur($id);
+              $data['dep']=$this->agriculteurs_model->liste_dep();
               $this->load->view('administration/modifier_agriculteur_view', $data);
           }else{
              redirect_back();
@@ -210,6 +214,7 @@ class Agriculteurs extends CI_Controller {
           if ($id) {
               $data['get'] = $this->agriculteurs_model->get_agriculteur($id);
               $data['liste_plantation'] = $this->agriculteurs_model->get_liste_plantation_agriculteur($id);
+            
               $this->load->view('administration/detail_agriculteur_view', $data);
           }else{
              redirect_back();

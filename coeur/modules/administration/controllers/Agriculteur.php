@@ -7,7 +7,7 @@ class Administration extends CI_Controller {
         parent::__construct();
         $this->load->model('administration_model');
 
-      if(!$this->session->userdata('id_admin')){
+      if(!$this->session->userdata('idadmin')){
             redirect('connexion');
         }
 

@@ -26,16 +26,16 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Administration</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Liste des administrateurs</li>
+                            <li class="breadcrumb-item active">Liste des departements</li>
                         </ol>
 
-                          <a class="nav-link" href="<?php  echo base_url()?>administration/administrateurs/ajouter_administrateur"> <button type="button" class="btn btn-primary">  Ajouter un nouvel administrateur </button> </a>
+                          <a class="nav-link" href="<?php  echo base_url()?>administration/departements/ajouter_departement"> <button type="button" class="btn btn-primary">  Ajouter un nouveau departement </button> </a>
 
 
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                               Liste des administrateurs
+                               Liste des departements
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -44,25 +44,17 @@
                                            
                                                 <th>NUM</th>
                                                 <th>NOM</th>
-                                                <th>PRENOM</th>
-                                                <th>EMAIL</th>
-                                                <th>MOT DE PASSE</th>
-                                                <th>NUMERO TELEPHONE</th>
-                                                <th>PRIVILEGE</th>
-                                                <th>TACHES</th>
+                                                <th>SUPERFICIE</th>
+                                                <th>TACHE</th>
 
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                                <th>NUM</th>
+                                               <th>NUM</th>
                                                 <th>NOM</th>
-                                                <th>PRENOM</th>
-                                                <th>EMAIL</th>
-                                                <th>MOT DE PASSE</th>
-                                                <th>NUMERO TELEPHONE</th>
-                                                <th>PRIVILEGE</th>
-                                                <th>TACHES</th>
+                                                <th>SUPERFICIE</th>
+                                                <th>TACHE</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -70,49 +62,24 @@
 
          <?php
         $i=1;
-         foreach($abc as $ligne) { ?>
-
+  foreach($abc as $ligne) { ?>
                     <tr>
                         <td><?php echo $i; ?></td>
-                        <td><?php echo $ligne->nom?></td>
-                        <td><?php echo $ligne->prenom?></td>
-                        <td><?php echo $ligne->email?></td>
-                        <td><?php echo $ligne->mot_de_passe?></td>
-                        <td><?php echo $ligne->numero_telephone?></td>
-                        
-                        <td>
-                            <?php
-
-                      if($ligne->privilege =='1')
-                    {
-                        echo " Administrateur général";
-                    }
-
-                      elseif ($ligne->privilege =='2') 
-                    {
-                        echo "Utilisateur";
-                    }
-                     else
-                    {
-                        echo "n'affiche rien";
-                    }
-
-                    ?>
-
-
-                        </td>
+                        <td><?php echo $ligne->nomdep?></td>
+                        <td><?php echo $ligne->superficie?> Km2</td>
+                      
 
                         
                             <td align="center">
 
                                 <div class="d-flex">
 
-                                 <a title="Modifier" href="<?php echo base_url()?>administration/administrateurs/administrateur_recup/<?php echo $ligne->idadmin?>" class="btn btn-primary shadow btn-xs sharp mr-1"> <i class="bi bi-pencil-square"> </i> </a>&nbsp;  
+                                 <a title="Modifier" href="<?php echo base_url()?>administration/departements/departement_recup/<?php echo $ligne->iddep?>" class="btn btn-primary shadow btn-xs sharp mr-1"> <i class="bi bi-pencil-square"> </i> </a>&nbsp;  
 
 
 
                                 <button  type="button" title="Supprimer" 
-                                 onClick="javascript:if(window.confirm('Voulez-vous supprimer ?')){location.href='<?php echo site_url('administration/administrateurs/administrateur_supp/'.$ligne->idadmin) ; ?>'; return true;} else {return false;}"class="btn btn-secondary shadow btn-xs sharp">
+                                 onClick="javascript:if(window.confirm('Voulez-vous supprimer ?')){location.href='<?php echo site_url('administration/departements/departement_supp/'.$ligne->iddep) ; ?>'; return true;} else {return false;}"class="btn btn-secondary shadow btn-xs sharp">
                                <i class="bi bi-trash-fill"> </i> </a>
 
                                 </div>

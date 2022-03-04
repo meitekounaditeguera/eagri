@@ -37,6 +37,7 @@ class Plantations extends CI_Controller {
         $this->form_validation->set_rules('latitude', 'La latitude', 'trim|required');
         $this->form_validation->set_rules('longitude', 'La longitude', 'trim|required');
         $this->form_validation->set_rules('idagri', 'ID', 'trim|required');
+        $this->form_validation->set_rules('departement', 'ID', 'trim|required');
 
 
 
@@ -49,6 +50,7 @@ class Plantations extends CI_Controller {
                       'latitude' => $this->security->xss_clean($this->input->post('latitude')),
                       'longitude' => $this->security->xss_clean($this->input->post('longitude')),
                       'idagri' => $this->security->xss_clean($this->input->post('idagri')),
+                      'iddep' => $this->security->xss_clean($this->input->post('departement'))
 
                   );
 
@@ -81,7 +83,8 @@ class Plantations extends CI_Controller {
 
         }else{
 
-           $this->load->view('ajouter_plantation_view');
+           $donne['dep']=$this->plantations_model->liste_dep();
+           $this->load->view('ajouter_plantation_view',$donne);
 
         }
 
@@ -103,7 +106,7 @@ class Plantations extends CI_Controller {
         $this->form_validation->set_rules('latitude', 'La latitude', 'trim|required');
         $this->form_validation->set_rules('longitude', 'La longitude', 'trim|required');
         $this->form_validation->set_rules('idplant', 'ID', 'trim|required');
-       
+        $this->form_validation->set_rules('departement', 'ID', 'trim|required');
 
 
         if ($this->form_validation->run()) {
@@ -114,7 +117,10 @@ class Plantations extends CI_Controller {
                       'superficie' => $this->security->xss_clean($this->input->post('superficie')),
                       'latitude' => $this->security->xss_clean($this->input->post('latitude')),
                       'longitude' => $this->security->xss_clean($this->input->post('longitude')),
-                  );
+                      'iddep' => $this->security->xss_clean($this->input->post('departement'))
+
+                  ); 
+
 
                  // $iDplant=$this->security->xss_clean($this->input->post('idplant'));
                   $this->plantations_model->update_plantation($data,$idplant);
@@ -125,7 +131,7 @@ class Plantations extends CI_Controller {
         }else{
 
 
-
+          
              redirect_back();
 
 
@@ -140,6 +146,7 @@ class Plantations extends CI_Controller {
       {
           if ($id) {
               $data['get'] = $this->plantations_model->get_plantation($id);
+              $data['dep']=$this->plantations_model->liste_dep();
               $this->load->view('administration/modifier_plantation_view', $data);
           }else{
              redirect_back();
