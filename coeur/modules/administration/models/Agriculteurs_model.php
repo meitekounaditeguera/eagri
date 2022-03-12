@@ -87,7 +87,6 @@ class Agriculteurs_model extends CI_Model {
       }
 
 
-
     public function update_agriculteur($data, $idagri)
     {
         $this->db->where('idagri', $idagri);

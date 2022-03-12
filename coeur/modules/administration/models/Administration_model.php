@@ -73,6 +73,7 @@ class Administration_model extends CI_Model {
 
     }
 
+
     public function list_backend()
     {
 
@@ -169,6 +170,31 @@ class Administration_model extends CI_Model {
         $q = $this->db->get('agriculteur');
         return $q->num_rows();
     }
+
+     //nombre d'agriculteur par departement
+    public function sql_nombreagriculteur_dep()
+      {
+       /* $this->db->select('departement.nomdep, count(*)');
+        $this->db->from('agriculteur');
+        $this->db->join('departement.iddep = agriculteur.iddep ');
+        $this->db->group_by ('departement.nomdep');
+        $q = $this->db->get();*/
+
+
+
+
+        $sql="SELECT departement.nomdep, COUNT(*) as nbre
+              FROM departement,agriculteur
+              WHERE departement.iddep=agriculteur.iddep
+              GROUP BY departement.nomdep";
+
+         $q=$this->db->query($sql);
+
+        return $q->result();
+
+      }
+
+    
     
     //nombre de plantation
    public function sql_nombreplantation()
@@ -177,6 +203,29 @@ class Administration_model extends CI_Model {
         $q = $this->db->get('plantation');
         return $q->num_rows();
     }
+
+ //nombre de plantation par departement
+    public function sql_nombreplantation_dep()
+      {
+       /* $this->db->select('departement.nomdep, count(*)');
+        $this->db->from('agriculteur');
+        $this->db->join('departement.iddep = agriculteur.iddep ');
+        $this->db->group_by ('departement.nomdep');
+        $q = $this->db->get();*/
+
+
+
+
+        $sql="SELECT departement.nomdep, COUNT(*) as nbre
+              FROM departement,plantation
+              WHERE departement.iddep=plantation.iddep
+              GROUP BY departement.nomdep";
+
+         $q=$this->db->query($sql);
+
+        return $q->result();
+
+      }
 
 
    }

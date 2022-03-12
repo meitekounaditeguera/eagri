@@ -18,6 +18,8 @@ class Administration extends CI_Controller {
     {
         $data['nombre_agriculteur'] = $this->administration_model->sql_nombreagriculteur();
         $data['nombre_plantation'] = $this->administration_model->sql_nombreplantation();
+        $data['nombre_agriculteur_dep'] = $this->administration_model->sql_nombreagriculteur_dep();
+        $data['nombre_plantation_dep'] = $this->administration_model->sql_nombreplantation_dep();
         $this->load->view('accueil',$data);
 
 
