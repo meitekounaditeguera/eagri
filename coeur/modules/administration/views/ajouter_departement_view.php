@@ -47,7 +47,7 @@
                           
                           <div class="form-group">
                             <label for="exampleFormControlInput1">NOM</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" name="nom">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="nomdep">
                           </div>
 
                           <div class="form-group">

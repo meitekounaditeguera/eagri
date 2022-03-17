@@ -37,7 +37,7 @@ class Departements extends CI_Controller {
         if ($this->form_validation->run()) {
 
                   $data = array(
-                      'nomdep' => $this->security->xss_clean($this->input->post('nom')),
+                      'nomdep' => $this->security->xss_clean($this->input->post('nomdep')),
                       'superficie' => $this->security->xss_clean($this->input->post('superficie')),
                 
                   );
@@ -81,7 +81,7 @@ class Departements extends CI_Controller {
 
                   $data = array(
                       
-                        'nomdep' => $this->security->xss_clean($this->input->post('nom')),
+                        'nomdep' => $this->security->xss_clean($this->input->post('nomdep')),
                         'superficie' => $this->security->xss_clean($this->input->post('superficie')),
 
                   );
