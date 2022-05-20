@@ -51,7 +51,7 @@
                             <label for="exampleFormControlSelect1">CULTURE</label>
                             <select class="form-control" id="culture" name="culture" value="<?php echo $get->culture;  ?>">
                              
-                                <option value="cacoa">cacao</option>
+                                <option value="cacoa">ccaoa</option>
                                 <option value="mais">mais</option>
                                 <option value="manioc">manioc</option>
                                 <option value="banane">banane</option>
